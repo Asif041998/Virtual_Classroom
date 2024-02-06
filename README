@@ -1,0 +1,59 @@
+# Virtual Classroom Microservice
+
+## Overview
+
+This project implements a Virtual Classroom microservice, which consists of various API endpoints for managing assignments, submissions, and user authentication. The microservice is designed to handle actions for both tutors and students within a virtual classroom setting.
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose ODM
+- JSON Web Tokens (JWT) for authentication
+- Nodemon
+
+## Project Structure
+
+The project follows a microservices architecture with separate modules for authentication, tutor actions, and student actions.
+
+- **Authentication Module:** Handles user sign-up, sign-in, and token generation for authentication.
+
+- **Tutor Module:** Manages actions specific to tutors, including creating, updating, and deleting assignments, as well as viewing assignment details along with submissions.
+
+- **Student Module:** Manages actions specific to students, such as submitting assignments, viewing a student-specific assignment feed, and retrieving assignment details for submitted assignments.
+
+## API Endpoints
+
+### Authentication Endpoints
+
+- **POST /auth/signup:** Register a new user (tutor or student).
+- **POST /auth/signin:** Authenticate and generate a JWT for future requests.
+
+### Tutor Actions
+
+- **POST /assigments:** Create a new assignment.
+- **PUT /assignments/:_id:** Update an existing assignment.
+- **DELETE /assignments/:_id:** Delete an assignment.
+- **GET /assignments:** Get a feed of assignments specific to the tutor.
+- **GET /assignments/:_id:** Get details of a specific assignment, including submissions by assigned students.
+
+### Student Actions
+
+- **POST /submissions/:_id:** Submit an assignment by assignment id.
+- **GET /submissions:** Get a feed of assignments specific to the student.
+- **GET /submissions/:_id:** Get details of a specific assignment submitted by the student.
+
+## How to Run the Project
+
+1. Clone the repository: `git clone <repository_url>`
+2. Install dependencies: `npm install`
+3. Configure MongoDB connection in `.env`
+4. Start the server: `node app.js`
+5. Access the API endpoints using a tool like Postman or cURL.
+
+## Contributors
+
+- Md Asif Ansari
+
+
